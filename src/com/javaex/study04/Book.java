@@ -1,9 +1,9 @@
 package com.javaex.study04;
 
-public class Books {
+public class Book {
 	/*질문
 	1.필드이름 첫글자는 소문자 이후에 단어들의 첫글자는 대문자?
-	2. 필드 안에있는 변수를 뭐라고 부르는지
+	2.필드 안에있는 변수를 뭐라고 부르는지
 	*/
 	
 	//필드
@@ -28,14 +28,14 @@ public class Books {
 	*/
 	
 	//디폴트 생성자
-	public Books() {
+	public Book() {
 		
 	}
-	public Books(int bookNo, String title, String author, int stateCode) {
+	public Book(int bookNo, String title, String author) {
 		this.bookNo = bookNo;
 		this.title = title;
 		this.author = author;
-		this.stateCode = stateCode;
+		this.stateCode++;
 	}
 	
 	//메소드 g-s
@@ -43,7 +43,20 @@ public class Books {
 	 1. get, set의 차이를 잘 이해해두기
 	 2. get, set의 이름을 바꿀경우 에러가 날 수 있음.
 	 */
-	
 	//메소드 일반
-	
+	public void rent() {//대여기능 메소드
+		if(stateCode==1) {
+			System.out.println(title+"이(가) 대여되었습니다.");
+			stateCode--;
+		} else {
+			System.out.println("재고가 없습니다.");
+		}
+	}
+	public void print() {//책정보 출력 메소드
+		if(stateCode==1) {
+		System.out.println(bookNo+", \""+title+"\", \""+author+"\", "+"재고있음");
+		} else {
+			System.out.println(bookNo+", \""+title+"\", \""+author+"\", "+"대여중");	
+		}
+	}
 }
