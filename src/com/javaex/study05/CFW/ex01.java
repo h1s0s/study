@@ -1,4 +1,4 @@
-package com.javaex.sutdy05.CFW;
+package com.javaex.study05.CFW;
 
 public class ex01 {
 
